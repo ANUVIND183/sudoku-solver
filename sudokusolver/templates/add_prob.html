@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku</title>
+    <link rel="stylesheet" href="{% static 'add_prob.css' %}">
+    <script src="{% static 'add_prob.js' %}"></script>
+</head>
+<body>
+    <h1>Sudoku solver</h1>
+    <form action="{% url 'saved_prob' %}" method="POST" id="sudoku_form">
+        {% csrf_token %}
+    <div id="board">
+        <div id="00" class="cell"></div>
+        <div id="01" class="cell"></div>
+        <div id="02" class="cell"></div>
+        <div id="03" class="cell"></div>
+        <div id="04" class="cell"></div>
+        <div id="05" class="cell"></div>
+        <div id="06" class="cell"></div>
+        <div id="07" class="cell"></div>
+        <div id="08" class="cell"></div>
+        <div id="10" class="cell"></div>
+        <div id="11" class="cell"></div>
+        <div id="12" class="cell"></div>
+        <div id="13" class="cell"></div>
+        <div id="14" class="cell"></div>
+        <div id="15" class="cell"></div>
+        <div id="16" class="cell"></div>
+        <div id="17" class="cell"></div>
+        <div id="18" class="cell"></div>
+        <div id="20" class="cell"></div>
+        <div id="21" class="cell"></div>
+        <div id="22" class="cell"></div>
+        <div id="23" class="cell"></div>
+        <div id="24" class="cell"></div>
+        <div id="25" class="cell"></div>
+        <div id="26" class="cell"></div>
+        <div id="27" class="cell"></div>
+        <div id="28" class="cell"></div>
+        <div id="30" class="cell"></div>
+        <div id="31" class="cell"></div>
+        <div id="32" class="cell"></div>
+        <div id="33" class="cell"></div>
+        <div id="34" class="cell"></div>
+        <div id="35" class="cell"></div>
+        <div id="36" class="cell"></div>
+        <div id="37" class="cell"></div>
+        <div id="38" class="cell"></div>
+        <div id="40" class="cell"></div>
+        <div id="41" class="cell"></div>
+        <div id="42" class="cell"></div>
+        <div id="43" class="cell"></div>
+        <div id="44" class="cell"></div>
+        <div id="45" class="cell"></div>
+        <div id="46" class="cell"></div>
+        <div id="47" class="cell"></div>
+        <div id="48" class="cell"></div>
+        <div id="50" class="cell"></div>
+        <div id="51" class="cell"></div>
+        <div id="52" class="cell"></div>
+        <div id="53" class="cell"></div>
+        <div id="54" class="cell"></div>
+        <div id="55" class="cell"></div>
+        <div id="56" class="cell"></div>
+        <div id="57" class="cell"></div>
+        <div id="58" class="cell"></div>
+        <div id="60" class="cell"></div>
+        <div id="61" class="cell"></div>
+        <div id="62" class="cell"></div>
+        <div id="63" class="cell"></div>
+        <div id="64" class="cell"></div>
+        <div id="65" class="cell"></div>
+        <div id="66" class="cell"></div>
+        <div id="67" class="cell"></div>
+        <div id="68" class="cell"></div>
+        <div id="70" class="cell"></div>
+        <div id="71" class="cell"></div>
+        <div id="72" class="cell"></div>
+        <div id="73" class="cell"></div>
+        <div id="74" class="cell"></div>
+        <div id="75" class="cell"></div>
+        <div id="76" class="cell"></div>
+        <div id="77" class="cell"></div>
+        <div id="78" class="cell"></div>
+        <div id="80" class="cell"></div>
+        <div id="81" class="cell"></div>
+        <div id="82" class="cell"></div>
+        <div id="83" class="cell"></div>
+        <div id="84" class="cell"></div>
+        <div id="85" class="cell"></div>
+        <div id="88" class="cell"></div>
+        <div id="86" class="cell"></div>
+        <div id="87" class="cell"></div>
+    </div>
+    <div id="num">
+        <div class="number" id="1">1</div>
+        <div class="number" id="2">2</div>
+        <div class="number" id="3">3</div>
+        <div class="number" id="4">4</div>
+        <div class="number" id="5">5</div>
+        <div class="number" id="6">6</div>
+        <div class="number" id="7">7</div>
+        <div class="number" id="8">8</div>
+        <div class="number" id="9">9</div>
+    </div>
+    <div id="ans">
+        <div id="restart" class="last">RESET</div>
+        <!-- <div id="save" class="last">SAVE</div> -->
+        <input type="hidden" name="board_data" id="board_data">
+        <button type="submit" id="save" class="last" >Save</button>
+        <div id="clear" class="last">CLEAR</div>
+    </div>
+    </form>
+</body>
+</html>

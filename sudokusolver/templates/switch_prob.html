@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku</title>
+    <link rel="stylesheet" href="{% static 'sudoku.css' %}">
+    <script src="{% static 'switch.js' %}"></script>
+    <style>
+        .last{
+            width: 117px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sudoku solver</h1>
+    <div id="board"></div>
+    <div id="num"></div>
+    <div id="ans">
+        <div id="restart" class="last">RESET</div>
+        <div id="switch" class="last">Swap</div>
+        <div id="switch_prob" class="last">Switch</div>
+        <div id="clear" class="last">CLEAR</div>
+    </div>
+</body>
+</html>

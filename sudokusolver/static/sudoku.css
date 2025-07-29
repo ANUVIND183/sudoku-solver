@@ -1,0 +1,81 @@
+body{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+    user-select: none;
+}
+h1{
+    margin-bottom: 20px;
+}
+#board{
+    width: 468px;
+    height: 468px;
+    background-color: rgb(203, 192, 214);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:0;
+    border: 2px solid black;
+}
+
+.cell{
+    border:1px solid rgb(185, 185, 185);
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.cell:hover{
+    background-color: rgb(212, 197, 197);
+}
+#num{
+    display: flex;
+    margin-top: 10px;
+}
+.number{
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    margin: 1px;
+    font-style: normal;
+    user-select: none;
+}
+.cell.given{
+    font-size: x-large;
+    font-weight: bold;
+}
+.number:hover{
+    background-color: grey;
+}
+#ans{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+}
+.last{
+    border: 1px solid black;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    width: 157px;
+    height: 30px;
+    user-select: none;
+}
+.last:hover{
+    background-color: gray;
+}

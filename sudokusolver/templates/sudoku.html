@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku</title>
+    <link rel="stylesheet" href="{% static 'sudoku.css' %}">
+    <script src="{% static 'sudoku.js' %}"></script>
+</head>
+<body>
+    <h1>Sudoku solver</h1>
+    <div id="board"></div>
+    <div id="num"></div>
+    <div id="ans">
+        <div id="restart" class="last">RESET</div>
+        <div id="solve" class="last">SOLVE</div>
+        <div id="clear" class="last">CLEAR</div>
+    </div>
+    {{problem|json_script:"problem"}}
+    {{solution|json_script:"solution"}}
+</body>
+</html>

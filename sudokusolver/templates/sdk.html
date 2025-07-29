@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="heading">
+        <h2>HELLOW {{request.user.username}}</h2>
+    </div>
+    <div class="general">
+        <div class="section prb">PROBLEMS</div>
+        <div class="section myprb">Myproblem</div>
+        <div class="section switchh">Switch Problem</div>
+        <div class="section neww">ADD Problem</div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded",function(){
+            const prbsection=document.querySelector(".section.prb");
+            prbsection.addEventListener("click",function(){
+                window.location.href="/prob_list";
+            });
+        });
+        document.addEventListener("DOMContentLoaded",function(){
+            const myprb=document.querySelector(".section.myprb");
+            myprb.addEventListener("click",function(){
+                window.location.href="/my_problems";
+            });
+        });
+        document.addEventListener("DOMContentLoaded",function(){
+            const neww=document.querySelector(".section.neww");
+            neww.addEventListener("click",function(){
+                window.location.href="/add_prob";
+            });
+        });
+        document.addEventListener("DOMContentLoaded",function(){
+            const switchh=document.querySelector(".section.switchh");
+            switchh.addEventListener("click",function(){
+                window.location.href="/switch_prob";
+            });
+        });
+    </script>
+</body>
+</html>

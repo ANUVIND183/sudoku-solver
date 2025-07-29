@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem list</title>
+    <link rel="stylesheet" href="{% static 'prob_list.css' %}">
+</head>
+<body>
+    <div class="list">
+        <h1>PROBLEMS</h1>
+        {% for prob in problems %}
+        <div class="container" data="{{prob.id}}" onclick="solution(this)">
+            <div class="prob id">ID:{{prob.id}}</div>
+            <div class="prob level">Level:{{prob.level}}</div>
+            <div class="prob created_by">Created by:{{prob.created_user}}</div>
+            <div class="prob created_at">Created at:{{prob.created_at}}</div>
+        </div>
+        {% endfor %}
+    </div>
+    <script>
+        function solution(eml){
+            problm=eml.getAttribute("data")
+            window.location.href=`/sudoku/${problm}`;
+        }
+        document.addEventListener("DOMContentLoaded",function(){
+            const levels=document.querySelectorAll(".prob.level");
+            levels.forEach(function(level){
+                if(level.textContent=="Level:medium"){
+                    level.style.color="orange";
+                }
+                else if(level.textContent=="Level:hard"){
+                    level.style.color="red";
+                }
+                else{
+                    level.style.color="green";
+                }
+            });
+            let num=1;
+            const ids=document.querySelectorAll(".prob.id");
+            ids.forEach(function(id){
+                id.textContent=num;
+                num++;
+            })
+        });
+    </script>
+</body>
+</html>
